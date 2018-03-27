@@ -401,6 +401,13 @@ static int create_pair(struct trice *icem, struct ice_lcand *lcand,
 		return 0;
 	}
 
+	/* loopback pairing optimization: only pair with loopback addresses */
+	if (icem->conf.optimize_loopback_pairing &&
+	    sa_is_loopback(&lcand->attr.addr) !=
+	    sa_is_loopback(&rcand->attr.addr)) {
+		return 0;
+	}
+
 	cpx = find_same_base(icem, lcand, rcand);
 	if (cpx) {
 		trice_printf(icem,

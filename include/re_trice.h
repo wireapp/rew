@@ -7,11 +7,15 @@
 
 /** ICE Configuration */
 struct trice_conf {
-	enum ice_nomination nom;/**< Nomination algorithm                  */
-	bool debug;             /**< Enable ICE debugging                  */
-	bool trace;             /**< Enable tracing of Connectivity checks */
-	bool ansi;              /**< Enable ANSI colors for debug output   */
-	bool enable_prflx;      /**< Enable Peer-Reflexive candidates      */
+	enum ice_nomination nom;       /**< Nomination algorithm             */
+	bool debug;                    /**< Enable ICE debugging             */
+	bool trace;                    /**< Enable tracing of Connectivity
+					    checks                           */
+	bool ansi;                     /**< Enable ANSI colors for debug
+					   output                            */
+	bool enable_prflx;             /**< Enable Peer-Reflexive candidates */
+	bool optimize_loopback_pairing;/**< Reduce candidate pairs when
+					    using loopback addresses         */
 };
 
 struct trice;
