@@ -106,8 +106,7 @@ int trice_rcand_add(struct ice_rcand **rcandp, struct trice *icem,
 	rcand = trice_rcand_find(icem, compid, proto, addr);
 	if (rcand) {
 
-		if (rcand->attr.type == ICE_CAND_TYPE_PRFLX &&
-		    prio > rcand->attr.prio) {
+		if (rcand->attr.type == ICE_CAND_TYPE_PRFLX) {
 
 			rcand->attr.type = type;
 			rcand->attr.prio = prio;
